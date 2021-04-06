@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+<body class="text-center">
+    <h1 class="mt-5">Calculator</h1>
+    <div class="border" >
+       <input id="result" type="text" class="width">
+        <div class="pt-2" >
+            <button class="btn b-clr" onclick="tNum('7')">7</button>
+            <button class="btn b-clr" onclick="tNum('8')">8</button>
+            <button class="btn b-clr mr-2" onclick="tNum('9')">9</button>
+            <button class="round btn b-clr grn-clr" onclick="tNum('/')">/</button>
+        </div>
+        <div class="pt-2">
+            <button class="btn b-clr" onclick="tNum('4')">4</button>
+            <button class="btn b-clr" onclick="tNum('5')">5</button>
+            <button class="btn b-clr mr-2" onclick="tNum('6')">6</button>
+            <button class="round btn b-clr grn-clr" onclick="tNum('*')">X</button>
+        </div>
+        <div class="pt-2">
+            <button class="btn b-clr" onclick="tNum('1')">1</button>
+            <button class="btn b-clr" onclick="tNum('2')">2</button>
+            <button class="btn b-clr mr-2" onclick="tNum('3')">3</button>
+            <button class="round btn b-clr grn-clr" onclick="tNum('-')">-</button>
+        </div>
+        <div class="pt-2">
+            <button class="btn b-clr" onclick="tNum('0')">0</button>
+            <button class="btn b-clr" onclick="tNum('.')">.</button>
+            <button class="btn b-clr red mr-2" onclick="clearData()">C</button>
+            <button class="round btn b-clr grn-clr" onclick="tNum('+')">+</button>
+        </div>
+       <div class="text-center pt-1 pb-1"><button class=" mr-5 mt-1 b-clr btn" onclick="fResult()">=</button></div>
+    </div>
+
+    <script>
+        function tNum(num){
+            var res=document.getElementById("result")
+            res.value +=num;
+        }
+        function clearData(){
+            var data=document.getElementById('result');
+            data.value="";
+            console.log(data);
+        }
+        function fResult(){
+            var result2=document.getElementById("result");
+            var cal=eval(result2.value);
+            console.log(cal);
+            result2.value="";
+            result2.value=cal;
+            console.log(result2);
+        }
+
+    </script>
+</body>
+</html>
